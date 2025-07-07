@@ -1,0 +1,89 @@
+body{
+    font-family: monospace;
+    text-align: center;
+    background: url("./bg.jpg");
+    background-size:cover;
+}
+
+#board{
+    width: 540px;
+    height: 540px;
+    background-color: brown;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    background: url("./background.png");
+    background-size: cover;
+    border: 3px solid rgb(131, 80, 57);
+    border-radius: 25px;
+}
+
+#board div {
+    /* board = 540x540, divide into 3x3 tiles --> 180x180  per div */
+    width: 180px;
+    height: 180px;
+    background-image: url("./tile.png");
+    background-size: cover;
+}
+
+#board div img{
+    /*all img tags inside the tile div*/
+    width: 135px;
+    height: 135px;
+
+    /* to make sure img tags are not dragable or selectable*/
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#gameOverMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* semi-transparent dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#gameOverBox {
+    background: url("./bg.jpg");
+    background-size: cover;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px black;
+}
+
+#gameOverMenu.hidden {
+    display: none;
+}
+
+#gameOverBox button {
+    background-color: rgb(14, 106, 60);
+    color: azure;
+    cursor: pointer;
+    border-width: 2px;
+    border-color: rgb(12, 83, 48);
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+#gameOverBox button:hover {
+    background-color: rgb(195, 253, 229);
+    color: rgb(14, 106, 60);
+}
+
+#board img{
+    cursor: pointer;
+}
